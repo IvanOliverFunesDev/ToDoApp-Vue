@@ -1,11 +1,12 @@
 <template>
     <div class="page">
         <h1>Página de New Tasks</h1>
-        <p>Bienvenido al sistema. Por favor, inicia sesión.</p>
+        <TaskForm />
     </div>
 </template>
 
 <script setup>
+import TaskForm from '../components/TaskForm.vue'
 </script>
 
 <style scoped>

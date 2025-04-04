@@ -1,6 +1,6 @@
 <template>
     <div class="login-page">
-        <h1>Registro</h1>
+        <h1>Login</h1>
         <form @submit.prevent="handleSubmit">
             <input type="email" placeholder="Correo electrónico" v-model="email" required />
             <input type="password" placeholder="Contraseña" v-model="password" required />
@@ -23,7 +23,7 @@ const handleSubmit = async () => {
     try {
         const data = await login({ email: email.value, password: password.value })
         console.log("✅ Usuario registrado:", data)
-
+        localStorage.setItem('token', data.token);
         router.push('/login')
     } catch (err) {
         console.error("❌ Error al registrar:", err.response?.data || err.message)
