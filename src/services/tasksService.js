@@ -23,3 +23,15 @@ export const getTasks = async () => {
     });
     return response.data.tasks;
 };
+
+export const getTaskById = async (id) => {
+    const token = localStorage.getItem('token');
+
+    const response = await axios.get(`${API_URL}/tasks/${id}`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+
+    return response.data.task;
+};
