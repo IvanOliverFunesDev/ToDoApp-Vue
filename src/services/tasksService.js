@@ -12,3 +12,14 @@ export const createTask = async (taskData) => {
     });
     return response.data;
 };
+
+export const getTasks = async (taskData) => {
+    const token = localStorage.getItem('token')
+
+    const response = await axios.get(`${API_URL}/tasks/search`, taskData, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+    return response.data, tasks;
+};
