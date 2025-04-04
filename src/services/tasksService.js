@@ -35,3 +35,14 @@ export const getTaskById = async (id) => {
 
     return response.data.task;
 };
+
+export const updateTask = async (id, taskData) => {
+    const token = localStorage.getItem('token');
+
+    const response = await axios.put(`${API_URL}/tasks/${id}`, taskData, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+    return response.data
+}
