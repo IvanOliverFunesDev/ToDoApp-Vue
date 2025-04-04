@@ -26,7 +26,6 @@ const handleSubmit = async () => {
         const data = await register({ name: name.value, email: email.value, password: password.value })
         console.log("✅ Usuario registrado:", data)
 
-        // Aquí puedes usar Swal o redirigir directamente:
         router.push('/login')
     } catch (err) {
         console.error("❌ Error al registrar:", err.response?.data || err.message)
